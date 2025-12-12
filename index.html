@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weera's Portfolio - Electrical Engineering PM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">Weera.</div>
+        <nav class="navbar">
+            <a href="#hero" class="active" id="home-link">Home</a>
+            <a href="#about-me" id="about-link">About</a> 
+            <a href="#projects-section">Experience</a>
+            <a href="#contact-section">Contact</a>
+        </nav>
+        <button class="cv-button-nav" id="cv-request-nav">Download CV <i class="fa-solid fa-download"></i></button>
+    </header>
+
+    <section class="hero-section" id="hero"> 
+        <div class="hero-content" id="content"> 
+            <span class="tag">Weera Boonkla</span>
+            <h1 class="title">I'm a <span class="designer-text">PM | Project Execution</span></h1>
+            
+            <p class="description">
+                A dedicated **Electrical Project Engineer** with over 7 years of experience specializing in the complete lifecycle of electrical power projects. Proven expertise in project execution, cost control, and managing LV/MV Schneider Electric power products.
+            </p>
+
+            <div class="cta-buttons">
+                <button class="btn-hire" id="contact-me-cta">Contact Me</button>
+                <button class="btn-download" id="cv-request-hero">Download CV <i class="fa-regular fa-file-lines"></i></button>
+            </div>
+
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/in/weera-boonkla-a5279a118" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/weera.boonkla.2024" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+
+        <div class="hero-image-container" id="image-container">
+            <div class="circle-background"></div>
+            <img src="my-profile.jpg" alt="Weera" class="profile-image"> 
+        </div>
+    </section>
+    
+    <section class="about-section" id="about-me">
+        <div class="about-content content-padding">
+            <h2>Professional Profile</h2>
+            <p>
+                Weera Boonkla is a highly experienced and dedicated Electrical Project Engineer with over 7 years of experience. He specializes in the complete lifecycle of electrical power projects, ensuring successful completion through rigorous management.
+            </p>
+            <p>
+                His proven expertise encompasses initial design and engineering, procurement, material and subcontractor management, and final testing and commissioning. He is adept at managing costs, schedules, and overall project engineering for both Low Voltage (LV) and Medium Voltage (MV) power systems.
+            </p>
+            <div class="info-block">
+                <h3>Education & Languages</h3>
+                <p>Weera holds a **Bachelor of Engineering in Electrical Engineering** from Ubon Ratchathani University. He is fluent in Thai and possesses technical/business proficiency in English.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="projects-section" id="projects-section">
+        <div class="projects-content content-padding">
+            <h2>Core Experience & Expertise</h2>
+            <p class="summary-text">Summary of key responsibilities and specialization areas across 7+ years of project execution and electrical design.</p>
+            
+            <div class="expertise-list">
+                <h3>Current Role: Project Engineer (Schneider Electric, 2018–Present)</h3>
+                <ul>
+                    <li>**Project Execution & Management:** Successfully executes multiple electrical projects, managing all aspects including cost control, schedule adherence, and engineering quality.</li>
+                    <li>**End-to-End Responsibility:** Drives projects from the initiation phase (design/engineering) through to completion, including material delivery, installation, and final testing/commissioning.</li>
+                    <li>**Technical Focus:** Specializes in the application and implementation of Schneider Electric's LV and MV electrical power products.</li>
+                </ul>
+
+                <h3>Previous Roles: Design & Coordination (2012–2018)</h3>
+                <ul>
+                    <li>**Power Plant Projects (RMS Quality):** Managed and coordinated engineering projects, including electrical bulk design and material supply for Power Plant facilities.</li>
+                    <li>**Oil & Gas Design (THAI ROTARY ENGINEERING):** Specialized in electrical power system design within the oil and gas field.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact-section" id="contact-section">
+        <div class="contact-content content-padding">
+            <h2>Get in Touch</h2>
+            <p class="summary-text">I am currently based in Bueng Kum district, Bangkok City, Thailand. Feel free to connect regarding new project opportunities or consulting roles.</p>
+            <div class="contact-info">
+                <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:weera.boonkla@gmail.com">weera.boonkla@gmail.com</a></p>
+                <p><i class="fa-solid fa-phone"></i> Phone: +66-96-169-8799</p>
+                <p><i class="fa-brands fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/weera-boonkla-a5279a118" target="_blank">View Profile</a></p>
+                <p><i class="fa-brands fa-facebook-f"></i> Facebook: <a href="https://www.facebook.com/weera.boonkla.2024" target="_blank">Connect on Facebook</a></p>
+            </div>
+        </div>
+    </section>
+
+    <div id="cv-request-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Request CV Access</h3>
+            <p>Please provide your professional email to receive a download link for my CV. I will review and grant access shortly.</p>
+            <form id="cv-request-form">
+                <div class="form-group">
+                    <label for="request-email"><i class="fa-solid fa-envelope"></i> Professional Email:</label>
+                    <input type="email" id="request-email" name="email" required placeholder="e.g., your.name@company.com">
+                </div>
+                <div class="form-group">
+                    <label for="request-wording"><i class="fa-solid fa-file-alt"></i> Purpose/Message (Optional):</label>
+                    <textarea id="request-wording" name="wording" rows="3" placeholder="I am contacting you about an open Project Manager role..."></textarea>
+                </div>
+                <button type="submit" id="submit-request-btn" class="btn-hire">
+                    <i class="fa-solid fa-paper-plane"></i> Submit Request
+                </button>
+                <div class="message-area" id="modal-message"></div>
+            </form>
+        </div>
+    </div>
+    <script>
+    const navLinks = document.querySelectorAll('.navbar a');
+    const sections = document.querySelectorAll('section');
+    
+    // --- 1. ScrollSpy and Smooth Scroll for Navigation Links ---
+    function updateActiveLink() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 150; 
+            if (scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('href').includes(current)) {
+                a.classList.add('active');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink();
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // --- 2. Custom Button Actions ---
+
+    // 2.1 Contact Me Button Scroll
+    const contactMeCta = document.getElementById('contact-me-cta');
+    contactMeCta.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Scroll to Contact Section
+        document.querySelector('#contact-section').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+
+    // 2.2 Download CV Access Request (Using Custom Modal)
+
+    // Elements
+    const cvRequestButtons = document.querySelectorAll('#cv-request-nav, #cv-request-hero');
+    const modal = document.getElementById('cv-request-modal');
+    const closeButton = modal.querySelector('.close-button');
+    const form = document.getElementById('cv-request-form');
+    const submitBtn = document.getElementById('submit-request-btn');
+    const modalMessage = document.getElementById('modal-message');
+
+    // *** สำคัญ: แทนที่ URL นี้ด้วย Web App URL ของคุณจาก Google Apps Script ***
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby6RZ-MxzOWgpTyEdo9OzqJlMey7jWbMPKImBTmtgmkfqExSyjb-NZYsrzIcuHpODJevw/exec"; 
+
+    // Open Modal
+    cvRequestButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            modalMessage.style.display = 'none'; // Reset message area
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling background
+        });
+    });
+
+    // Close Modal
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+        form.reset(); // Clear the form
+        submitBtn.classList.remove('loading'); // Ensure button is not in loading state
+        submitBtn.disabled = false;
+    }
+
+    closeButton.addEventListener('click', closeModal);
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Handle Form Submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        if (APPS_SCRIPT_URL.includes("YOUR_APPS_SCRIPT_WEB_APP_URL")) {
+            alert("❌ ERROR: Please replace the APPS_SCRIPT_URL in the JavaScript code with your actual URL before use.");
+            return;
+        }
+
+        // --- Basic Validation ---
+        const emailInput = document.getElementById('request-email');
+        if (!emailInput.value || !emailInput.value.includes('@')) {
+            showMessage(modalMessage, 'error', 'Please enter a valid email address.', 3000);
+            return;
+        }
+        
+        // --- Submission Logic ---
+        const formData = new FormData(form);
+        
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+        modalMessage.style.display = 'none';
+        
+        fetch(APPS_SCRIPT_URL, {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.text();
+            }
+            throw new Error(`Server responded with status: ${response.status}`);
+        })
+        .then(text => {
+            let data;
+            try {
+                data = JSON.parse(text);
+                // Check for success status from Apps Script JSON
+                if (data.status === 'success') {
+                    showMessage(modalMessage, 'success', 
+                        "✅ Request Sent! A download link will be emailed to you upon approval from Weera."
+                    );
+                    setTimeout(closeModal, 3000); // Close after success
+                } else {
+                    // Handle logical error from Apps Script (e.g., failed to send email)
+                    showMessage(modalMessage, 'error', 
+                        `❌ Submission Error: ${data.message || 'Unknown error occurred on the server.'}`
+                    );
+                }
+            } catch (e) {
+                // Case where Apps Script returns plain text success/error but no JSON
+                 showMessage(modalMessage, 'success', 
+                    "✅ Request Submitted! Please wait for approval. (If an error occurred, Weera will contact you directly.)"
+                );
+                setTimeout(closeModal, 3000);
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+            showMessage(modalMessage, 'error', 
+                `❌ Connection Error: ${error.message}. Please check console (F12) or try again later.`
+            );
+        })
+        .finally(() => {
+            submitBtn.classList.remove('loading');
+            submitBtn.disabled = false;
+        });
+    });
+    
+    // Helper function to show messages
+    function showMessage(element, type, message, duration = 0) {
+        element.textContent = message;
+        element.className = `message-area ${type}`;
+        element.style.display = 'block';
+        if (duration > 0) {
+            setTimeout(() => {
+                element.style.display = 'none';
+            }, duration);
+        }
+    }
+</script>
+
+</body>
+</html>
