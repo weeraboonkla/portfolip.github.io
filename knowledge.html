@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สรุปองค์ความรู้: สร้าง Web Portfolio อย่างง่ายและสวย</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- 1. Global Variables & Reset --- */
+        :root {
+            /* สีธีมหลัก (Engineering/Trust) */
+            --primary-color: #0966c3cf; 
+            --accent-color: #0966c3cf;
+            --bg-page: #f4f7f9;
+            --bg-card: #ffffff;
+            --text-color: #042026;
+            
+            /* สี Dynamic (CTA/Coding/Energy) */
+            --dynamic-purple: #1280ee; 
+            --dynamic-blue: #2c68f7; 
+            --dynamic-gradient: linear-gradient(90deg, var(--dynamic-blue) 0%, var(--dynamic-purple) 100%);
+            --dynamic-shadow: 0 10px 25px rgba(44, 104, 247, 0.35); 
+            
+            --border-radius-base: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'K2D', sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background: var(--bg-page);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* --- 2. Typography & Headers --- */
+        h1 {
+            font-size: 44px;
+            font-weight: 800;
+            color: var(--dynamic-blue);
+            margin-bottom: 10px;
+            line-height: 1.2;
+            text-align: center;
+        }
+        h2 {
+            font-size: 30px;
+            color: var(--primary-color);
+            border-bottom: 3px solid rgba(9, 102, 195, 0.1);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 22px;
+            color: var(--dynamic-purple);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* --- 3. Card & List Styles --- */
+        .card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius-base);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        ul li::before {
+            content: "\f058"; /* Checkmark icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        /* --- 4. Special Button Style --- */
+        .code-btn, .demo-link {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: var(--dynamic-gradient);
+            color: white;
+            font-weight: 600;
+            margin-top: 20px;
+            box-shadow: var(--dynamic-shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none; /* Make sure links don't have underline */
+        }
+        .code-btn:hover, .demo-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(44, 104, 247, 0.45);
+        }
+        
+        /* --- 5. Code Block --- */
+        .code-block {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: monospace;
+            margin: 20px 0;
+            border-left: 4px solid var(--dynamic-blue);
+        }
+        .code-block code {
+            display: block;
+        }
+
+        /* --- 6. Mobile Responsiveness Highlight --- */
+        .mobile-tip {
+            border: 2px dashed var(--dynamic-purple);
+            padding: 15px;
+            border-radius: 8px;
+            background: rgba(22, 128, 238, 0.05);
+            margin-top: 15px;
+        }
+
+        /* --- 7. Typewriter Effect Style (for demonstration) --- */
+        #demo-text {
+            min-height: 20px;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text-color);
+        }
+        .typewriter-caret {
+            display: inline-block;
+            width: 2px;
+            height: 1.1em;
+            background: var(--primary-color);
+            margin-left: 6px;
+            vertical-align: bottom;
+            animation: blink 1s steps(2,start) infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* --- 8. Showcase Section --- */
+        .showcase-img-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: #eef1f3;
+            border-radius: var(--border-radius-base);
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+        .showcase-img-container img {
+            max-width: 90%;
+            height: auto;
+            border-radius: var(--border-radius-base);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            border: 1px solid #ddd;
+        }
+
+
+        /* Mobile specific style for demonstration */
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+            .container { padding: 10px; }
+            .card { padding: 20px; }
+            .code-block { font-size: 14px; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>สรุปองค์ความรู้: สร้าง Web Portfolio อย่างง่าย สวย และทำงานรื่นไหล</h1>
+        <p style="text-align: center; font-size: 18px; color: var(--dynamic-blue); margin-bottom: 30px;">
+            บทสรุปเทคนิคการออกแบบและโค้ดดิ้งจากการปรับปรุง Portfolio ของคุณ Weera Boonkla
+        </p>
+        
+        <section id="showcase">
+            <h2><i class="fa-solid fa-desktop"></i> Web Portfolio ตัวอย่าง</h2>
+            <div class="card">
+                <p>Web Portfolio นี้ใช้เทคนิคการออกแบบที่เน้นความมั่นคง (สีหลัก) และการกระตุ้นการโต้ตอบ (Dynamic CTA) เพื่อนำเสนอความเชี่ยวชาญด้านวิศวกรรมไฟฟ้าได้อย่างทันสมัย</p>
+                
+                <div class="showcase-img-container">
+                    <img src="exam-Portfolio.jpg" alt="Web Portfolio Example Screenshot">
+                </div>
+
+                <a href="https://weeraboonkla.github.io/portfolio/" target="_blank" class="demo-link">
+                    <i class="fa-solid fa-link"></i> เยี่ยมชมเว็บไซต์จริง
+                </a>
+            </div>
+        </section>
+
+
+        <section id="design-concept">
+            <h2><i class="fa-solid fa-palette"></i> 1. แนวคิดการออกแบบและการจัดการสี</h2>
+            <div class="card">
+                <h3>Dynamic Color Consistency</h3>
+                <ul>
+                    <li>กำหนดสีธีมหลัก (น้ำเงิน/ฟ้า) เพื่อสื่อถึงความเป็นมืออาชีพและความน่าเชื่อถือ</li>
+                    <li>ใช้ **Dynamic Gradient** (ม่วง/น้ำเงิน) สำหรับปุ่ม CTA หลัก (`.btn-hire`, `.app-link-btn`) เพื่อสร้างพลังงานและกระตุ้นการคลิกเข้าชม</li>
+                    <li>การใช้ตัวแปร CSS (`:root`) ช่วยให้คุณเปลี่ยนสีทั้งเว็บได้ง่ายและรวดเร็ว</li>
+                </ul>
+                <div class="code-block">
+                    <code>/* CSS Variables Example */</code>
+                    <code>:root {</code>
+                    <code>    --dynamic-blue: #2c68f7;</code>
+                    <code>    --dynamic-gradient: linear-gradient(90deg, var(--dynamic-blue) 0%, var(--dynamic-purple) 100%);</code>
+                    <code>}</code>
+                </div>
+            </div>
+        </section>
+
+        <section id="image-handling">
+            <h2><i class="fa-solid fa-image"></i> 2. การจัดการรูปทรงรูปโปรไฟล์ (Mobile-Friendly)</h2>
+            <div class="card">
+                <p>
+                    เพื่อความเสถียรและสุนทรียภาพที่ดีบนทุกหน้าจอ เราได้เปลี่ยนไปใช้การจัดการรูปทรงที่แยกตามขนาดหน้าจอ:
+                </p>
+                
+                <h3>Desktop/Tablet (สี่เหลี่ยมผืนผ้าขอบมน)</h3>
+                <ul>
+                    <li>ใช้ภาพสี่เหลี่ยมผืนผ้าแบบ Portrait (อัตราส่วน 4/5) เพื่อความเป็นมืออาชีพ</li>
+                    <li>ไม่มีพื้นหลังสีมาซ้อน โดยเน้นความโดดเด่นด้วย `box-shadow` ที่ตัวภาพเอง</li>
+                </ul>
+                
+                <h3>Mobile (วงกลมสมมาตร)</h3>
+                <ul>
+                    <li>ใช้ Media Query บังคับให้ Container ของรูปภาพเป็นวงกลม (`border-radius: 50%`) บนหน้าจอเล็ก (ต่ำกว่า 600px)</li>
+                    <li>เทคนิคนี้ทำให้รูปภาพถูกตัดเป็นวงกลมโดยอัตโนมัติ ทำให้เว็บดูทันสมัยและประหยัดพื้นที่บนมือถือ</li>
+                </ul>
+                <div class="mobile-tip">
+                    <i class="fa-solid fa-mobile-alt"></i> **โค้ดสำหรับ Mobile (วงกลม):**
+                    <div class="code-block">
+                        <code>@media (max-width: 600px) {</code>
+                        <code>    .hero-image-container {</code>
+                        <code>        width: 200px; height: 200px; </code>
+                        <code>        border-radius: 50%; /* ทำให้ Container เป็นวงกลม */</code>
+                        <code>    }</code>
+                        <code>    .profile-image { </code>
+                        <code>        width: 100%; height: 100%; </code>
+                        <code>        /* ภาพจะถูกตัดตามขอบ Container */</code>
+                        <code>    }</code>
+                        <code>}</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="smooth-flow">
+            <h2><i class="fa-solid fa-hand-sparkles"></i> 3. เทคนิคเพื่อความรื่นไหล (Smooth Flow)</h2>
+            <div class="card">
+                <h3>Smooth Image Transition (Fade In/Out)</h3>
+                <ul>
+                    <li>ใช้ CSS `transition: opacity 0.5s ease-in-out` ใน `.profile-image` ทำให้การเปลี่ยนภาพเป็นไปอย่างนุ่มนวล</li>
+                    <li>JavaScript สลับ `opacity` เป็น 0 ก่อนเปลี่ยน `src` และเปลี่ยนกลับเป็น 1 เพื่อให้เกิด Effect Fade</li>
+                </ul>
+                
+                <h3>Typewriter Effect (ตัวอย่างด้านล่าง)</h3>
+                <p>เพิ่มความเป็น Dynamic ด้วย Typewriter Effect (สร้างด้วย Vanilla JS) เพื่อดึงดูดความสนใจในส่วน Hero</p>
+                <div id="demo-text">
+                    <span id="typewriter-demo-target"></span><span class="typewriter-caret" aria-hidden="true"></span>
+                </div>
+                
+                <a href="javascript:void(0);" class="code-btn" onclick="document.querySelector('#js-code').scrollIntoView();">
+                    <i class="fa-solid fa-code"></i> ดูโค้ด JavaScript Typewriter
+                </a>
+            </div>
+        </section>
+        
+        <section id="js-code">
+            <h2><i class="fa-solid fa-code"></i> 4. JavaScript Core Logic (Typewriter Function)</h2>
+            <div class="code-block">
+                <code>// Typewriter Function (ฟังก์ชันตัวหลัก)</code>
+                <code>function typewriter(targetEl, text, options = {}) {</code>
+                <code>    const delay = options.speed || 40;</code>
+                <code>    const loop = options.loop || false;</code>
+                <code>    const pauseAfter = options.pauseAfter || 1400;</code>
+                <code>    let i = 0;</code>
+                <code>    let deleting = false;</code>
+                <code>    function step() {</code>
+                <code>        if (!deleting) {</code>
+                <code>            if (i <= text.length) {</code>
+                <code>                targetEl.textContent = text.slice(0, i);</code>
+                <code>                i++;</code>
+                <code>                setTimeout(step, delay);</code>
+                <code>            } else if (loop) {</code>
+                <code>                setTimeout(() => { deleting = true; i = text.length; step(); }, pauseAfter);</code>
+                <code>            }</code>
+                <code>        } else {</code>
+                <code>            if (i >= 0) {</code>
+                <code>                targetEl.textContent = text.slice(0, i);</code>
+                <code>                i--;</code>
+                <code>                setTimeout(step, Math.max(18, delay * 0.6));</code>
+                <code>            } else {</code>
+                <code>                deleting = false;</code>
+                <code>                i = 0;</code>
+                <code>                setTimeout(step, 220);</code>
+                <code>            }</code>
+                <code>        }</code>
+                <code>    }</code>
+                <code>    step();</code>
+                <code>}</code>
+            </div>
+        </section>
+        
+        <footer style="text-align: center; padding: 30px 0; font-size: 14px; color: #777;">
+            © 2024 Web Portfolio Knowledge Summary | พัฒนาโดย Weera Boonkla
+    </div>
+    
+    <script>
+        // *** JavaScript Logic for Typewriter Demo ***
+        function typewriter(targetEl, text, options = {}) {
+            const delay = options.speed || 40;
+            const loop = options.loop || false; 
+            const pauseAfter = options.pauseAfter || 1400;
+
+            let i = 0;
+            let deleting = false;
+
+            function step() {
+                if (!deleting) {
+                    if (i <= text.length) {
+                        targetEl.textContent = text.slice(0, i);
+                        i++;
+                        setTimeout(step, delay);
+                    } else if (loop) {
+                        setTimeout(() => { deleting = true; i = text.length; step(); }, pauseAfter);
+                    }
+                } else {
+                    if (i >= 0) {
+                        targetEl.textContent = text.slice(0, i);
+                        i--;
+                        setTimeout(step, Math.max(18, delay * 0.6));
+                    } else {
+                        deleting = false;
+                        i = 0;
+                        setTimeout(step, 220);
+                    }
+                }
+            }
+            step();
+        }
+
+        // Run Typewriter Demo on Load
+        window.onload = function() {
+            const target = document.getElementById('typewriter-demo-target');
+            if (target) {
+                typewriter(target, "Web Portfolio ที่ดีต้องมี Dynamic และ Mobile Friendly!", { speed: 30, loop: true, pauseAfter: 1800 });
+            }
+        };
+
+        // Smooth Scroll for Navigation (just in case future links are added)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
