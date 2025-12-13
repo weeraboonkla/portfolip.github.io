@@ -1,12 +1,12 @@
 /* --- Global Styles & Reset --- */
 :root {
-    /* Clean modern teal theme (Base for Engineering/Trust) */
-    --primary-color: #0966c3cf; /* main teal */
-    --accent-color: #0966c3cf;/* darker teal for contrast */
-    --muted-accent: #ffd166;  /* warm gold highlight */
-    --bg-surface: #f7fbfb;    /* very light near-white surface */
-    --text-color: #07343a;    /* deep tealy-charcoal for body text */
-    --light-text: #6aaeb0;    /* lighter teal for muted text */
+    /* Clean modern blue/teal theme (Base for Engineering/Trust) */
+    --primary-color: #0966c3cf; /* main blue/teal */
+    --accent-color: #0966c3cf;  /* darker blue/teal for contrast */
+    --muted-accent: #ffd166;    /* warm gold highlight */
+    --bg-surface: #f7fbfb;      /* very light near-white surface */
+    --text-color: #07343a;      /* deep tealy-charcoal for body text */
+    --light-text: #6aaeb0;      /* lighter teal for muted text */
     --dark-text: #042026;
     --section-bg: #ffffff;
     
@@ -20,14 +20,6 @@
     --spacing: 48px;
     --border-radius-base: 12px;
     --glass-opacity: 0.74;
-    
-    /* Image and Blob Tuning for SYMMETRY (ปรับปรุงใหม่เพื่อความเนียนตา) */
-    --blob-width: 95%; /* ใช้วงกลมเล็กกว่า Container เล็กน้อย */
-    --blob-right: 2.5%; /* จัดให้อยู่ตรงกลาง */
-    --blob-top: 5%;
-    --profile-cut-radius: 50%; /* ตัดภาพเป็นวงกลมเต็มที่ */
-    --profile-cut-x: 50%; /* ตำแหน่งตัดกึ่งกลาง */
-    --profile-cut-y: 50%; /* ตำแหน่งตัดกึ่งกลาง */
 }
 
 * {
@@ -331,10 +323,9 @@ body {
 }
 
 
-/* --- HERO IMAGE STYLES (ปรับปรุงสัดส่วนให้เป็นวงกลม) --- */
+/* --- HERO IMAGE STYLES (Desktop/Tablet Portrait) --- */
 .hero-image-container {
     position: relative;
-    /* flexible portrait container */
     width: 420px;
     height: auto;
     aspect-ratio: 4 / 5;
@@ -346,21 +337,27 @@ body {
     opacity: 0;
     transform: scale(0.99);
     animation: fadeInScale 0.9s cubic-bezier(.2,.9,.3,1) 0.4s forwards;
-    background: linear-gradient(180deg, rgba(56,177,181,0.03), rgba(56,177,181,0.015));
+    
+    /* REMOVED BACKGROUND/SHADOW ON CONTAINER */
+    background: transparent; 
+    box-shadow: none;
     border-radius: 16px;
-    box-shadow: 0 26px 60px rgba(7,22,48,0.06);
     overflow: hidden;
 }
 
 .profile-image {
-    width: 86%;
-    height: 86%;
+    width: 100%; /* Fill the transparent container */
+    height: 100%;
     object-fit: cover;
-    border-radius: 14px;
-    box-shadow: 0 28px 70px rgba(7,22,48,0.12);
-    transition: transform 0.45s cubic-bezier(.2,.9,.3,1), opacity 0.45s ease;
+    border-radius: 12px; /* ขอบมน */
+    box-shadow: 0 28px 70px rgba(7,22,48,0.12); /* Shadow on the image itself */
+    /* Transition for smooth fade in/out */
+    transition: opacity 0.5s ease-in-out, transform 0.45s cubic-bezier(.2,.9,.3,1); 
     display: block;
 }
+
+/* ลบสไตล์ที่ไม่จำเป็นสำหรับวงกลมพื้นหลังออก */
+.circle-background { display: none; }
 
 
 /* --- 3. COMMON SECTION STYLES --- */
@@ -584,29 +581,34 @@ body {
     color: var(--muted-accent);
 }
 
-/* --- 8. RESPONSIVENESS --- */
+/* --- 8. RESPONSIVENESS (MOBILE FIRST) --- */
 @media (max-width: 900px) {
     :root {
         --hero-padding-left: 40px;
     }
     .hero-section {
-        display: block;
+        /* Stack content and image vertically */
+        grid-template-columns: 1fr; 
         text-align: center;
         padding-top: 60px; 
     }
     
     .hero-image-container {
         margin: 24px auto 10px; 
-        width: 280px; 
-        height: 350px; 
+        width: 320px; /* Base size for tablet */
+        aspect-ratio: 4 / 5; 
+        background: transparent; 
+        box-shadow: none; /* ลบพื้นหลังและเงาออกจาก Container */
+        border-radius: 0;
     }
     
     .profile-image {
         /* Centered rectangular portrait on tablet */
-        width: 86%;
+        width: 100%;
         height: auto;
-        max-height: 86%;
-        border-radius: 12px;
+        max-height: 100%;
+        border-radius: 16px; /* ขอบมนที่สวยงาม */
+        box-shadow: 0 18px 40px rgba(7,22,48,0.12); /* Shadow ที่ตัวภาพ */
         transform: none;
         position: static;
     }
@@ -637,14 +639,16 @@ body {
     .header {
         padding: 15px 20px; 
         justify-content: space-between; 
+        top: 10px;
+        width: calc(100% - 20px);
     }
-
+    
     /* Mobile Navigation Overrides */
     .navbar {
         position: fixed;
         top: 0;
-        right: -70%; 
-        width: 70%;
+        right: -100%; 
+        width: 80%;
         height: 100vh;
         background-color: white;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
@@ -665,25 +669,38 @@ body {
     /* Content Adjustments */
     .title { font-size: 36px; }
     .hero-image-container {
-        width: 220px;
-        height: 275px; 
+        width: 200px; /* ขนาดวงกลมเล็กพอดี */
+        height: 200px; 
+        aspect-ratio: 1 / 1; /* บังคับเป็นสี่เหลี่ยมจตุรัสสำหรับวงกลม */
+        border-radius: 50%; /* ทำให้ Container เป็นวงกลม */
+        overflow: hidden;
+        margin-bottom: 20px;
+        box-shadow: 0 18px 40px rgba(7,22,48,0.12); /* Shadow ที่วงกลม */
+        background: transparent; /* Ensure no background */
     }
-    .hero-image-container { background: transparent; }
+    
+    .profile-image {
+        /* Make the portrait circular and centered on small phones */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0; /* ภาพตัดตามขอบ Container ที่เป็นวงกลม */
+        box-shadow: none; /* ไม่ต้องมี shadow ที่ตัวภาพ เพราะ Container มีแล้ว */
+        display: block;
+    }
     
     .about-section, .projects-section, .contact-section, .web-app-showcase {
         padding-left: 20px;
         padding-right: 20px;
     }
-    
-    /* Make the portrait circular and centered on small phones */
-    .profile-image {
-        width: 92%;
-        height: auto;
-        border-radius: 50%;
-        object-fit: cover;
-        box-shadow: 0 18px 40px rgba(7,22,48,0.12);
-        display: block;
-        margin: 0 auto;
+    .stats-block {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .stat-item {
+        width: 100%;
+        min-width: unset;
+        padding: 12px;
     }
 }
 

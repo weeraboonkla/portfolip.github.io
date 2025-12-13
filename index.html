@@ -205,7 +205,7 @@
 
 
     // ------------------------------------
-    // 1. IMAGE SWAPPING LOGIC (6 วินาที + Fade)
+    // 1. IMAGE SWAPPING LOGIC (6 วินาที + Smooth Fade)
     // ------------------------------------
     const images = ['my-profile.jpg', 'my-profile2.jpg']; 
     let currentImageIndex = 0;
@@ -215,19 +215,19 @@
         currentImageIndex = (currentImageIndex + 1) % images.length;
         const nextImageSrc = images[currentImageIndex];
         
-        // Fade Out
+        // Fade Out (0.5s transition is set in CSS)
         profileImg.style.opacity = '0'; 
 
         setTimeout(() => {
             profileImg.src = nextImageSrc;
             // Fade In
             profileImg.style.opacity = '1'; 
-        }, 500); 
+        }, 500); // Wait for fade out to complete
     }
 
     // Set interval only if profileImg element exists
     if (profileImg) {
-        setInterval(swapImage, 6000);
+        setInterval(swapImage, 6000); // Swap every 6 seconds
     }
     
     // ------------------------------------
