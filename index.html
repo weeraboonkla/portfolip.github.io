@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weera's Portfolio - Electrical Engineering PM</title>
+    <title>Weera's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 </head>
-<body>
 
+<body>
+    <div class="bg-overlay" aria-hidden="true"></div>
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <div class="content-root">
     <header class="header">
-        <div class="logo">Weera.</div>
-        <nav class="navbar">
+        <div class="logo-profile">
+            <img src="my-profile2.jpg" alt="Weera Profile Logo" class="logo-image">
+        </div>
+        
+        <i class="fas fa-bars" id="menu-icon"></i> 
+        <nav class="navbar" id="mobile-nav">
             <a href="#hero" class="active" id="home-link">Home</a>
-            <a href="#about-me" id="about-link">About</a> 
-            <a href="#projects-section">Experience</a>
+            <a href="#web-app-showcase" id="web-app-link">Web App</a>
+            <a href="#about-me" id="about-link">Profile</a> 
+            <a href="#projects-section">Expertise</a>
             <a href="#contact-section">Contact</a>
         </nav>
         <button class="cv-button-nav" id="cv-request-nav">Download CV <i class="fa-solid fa-download"></i></button>
@@ -22,16 +32,36 @@
 
     <section class="hero-section" id="hero"> 
         <div class="hero-content" id="content"> 
-            <span class="tag">Weera Boonkla</span>
-            <h1 class="title">I'm a <span class="designer-text">PM | Project Execution</span></h1>
+            <span class="tag">Hello! welcome to...</span>
+            <h1 class="title">My Portfolio <span class="designer-text">I'm Weera Boonkla </span></h1>
             
-            <p class="description">
-                A dedicated **Electrical Project Engineer** with over 7 years of experience specializing in the complete lifecycle of electrical power projects. Proven expertise in project execution, cost control, and managing LV/MV Schneider Electric power products.
-            </p>
+            <p class="description"><span id="typewriter-target"></span><span class="typewriter-caret" aria-hidden="true"></span></p>
 
             <div class="cta-buttons">
                 <button class="btn-hire" id="contact-me-cta">Contact Me</button>
-                <button class="btn-download" id="cv-request-hero">Download CV <i class="fa-regular fa-file-lines"></i></button>
+                <button class="btn-download" id="cv-request-hero">Download CV <i class="fa-solid fa-download"></i></button>
+            </div>
+
+            <div class="stats-block">
+                <div class="stat-item">
+                    <span class="stat-number" id="cv-download-count">...</span> 
+                    <span class="stat-label">CV Requests</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label">Unique Visitors</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">7+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+            </div>
+            <div class="share-links">
+                <span class="share-label"><i class="fa-solid fa-share-alt"></i> Share this Portfolio:</span>
+                <a href="#" id="share-linkedin" class="share-btn linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" id="share-facebook" class="share-btn facebook" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" id="share-twitter" class="share-btn twitter" title="Share on X (Twitter)"><i class="fab fa-twitter"></i></a>
+                <a href="#" id="share-line" class="share-btn line" title="Share on LINE"><i class="fab fa-line"></i></a>
             </div>
 
             <div class="social-links">
@@ -42,23 +72,67 @@
         </div>
 
         <div class="hero-image-container" id="image-container">
-            <div class="circle-background"></div>
-            <img src="my-profile.jpg" alt="Weera" class="profile-image"> 
+            <img src="my-profile.jpg" alt="Weera Boonkla Professional Profile" class="profile-image" id="profile-img"> 
+        </div>
+    </section>
+    
+    <section class="web-app-showcase" id="web-app-showcase">
+        <div class="web-app-content content-padding">
+            <h2><i class="fa-solid fa-code"></i> My Coding & Knowledge Sharing Apps</h2>
+            <p class="summary-text">
+                นอกเหนือจากงานด้านวิศวกรรมไฟฟ้า ผมยังพัฒนา Web Application ง่ายๆ เพื่อแบ่งปันความรู้ด้าน Coding และเครื่องมือที่เป็นประโยชน์ในชีวิตประจำวัน 
+            </p>
+            
+            <div class="app-card-grid">
+                
+                <div class="app-card">
+                    <i class="fa-brands fa-google"></i>
+                    <h3>Google Apps Script Automation</h3>
+                    <p>ตัวอย่างการใช้ Apps Script เพื่อสร้างระบบอัตโนมัติในการจัดการข้อมูล, การส่งอีเมลแจ้งเตือน หรือสร้าง API สำหรับเชื่อมต่อกับ Google Sheet</p>
+                    <a href="https://github.com/WeeraBoonkla/AppsScript-Examples" target="_blank" class="app-link-btn">
+                        <i class="fa-brands fa-github"></i> ดู Source Code
+                    </a>
+                </div>
+
+                <div class="app-card">
+                    <i class="fa-solid fa-calculator"></i>
+                    <h3>Electrical Calculator Tool</h3>
+                    <p>เครื่องมือคำนวณพื้นฐานทางไฟฟ้า (เช่น Current, Voltage Drop, Power Factor) ที่สร้างด้วย HTML, CSS และ JavaScript</p>
+                    <a href="#" class="app-link-btn disabled-link">
+                        <i class="fa-solid fa-external-link-alt"></i> ดู Live Demo (เร็วๆ นี้)
+                    </a>
+                </div>
+
+                <div class="app-card">
+                    <i class="fa-solid fa-book-open"></i>
+                    <h3>Technical Blog Snippets</h3>
+                    <p>รวบรวมโค้ดและวิธีการแก้ปัญหาเฉพาะทางที่เกี่ยวข้องกับการทำ Web Front-end/JavaScript</p>
+                    <a href="#" class="app-link-btn disabled-link">
+                        <i class="fa-solid fa-link"></i> เยี่ยมชม Blog (เร็วๆ นี้)
+                    </a>
+                </div>
+                
+            </div>
         </div>
     </section>
     
     <section class="about-section" id="about-me">
         <div class="about-content content-padding">
             <h2>Professional Profile</h2>
-            <p>
-                Weera Boonkla is a highly experienced and dedicated Electrical Project Engineer with over 7 years of experience. He specializes in the complete lifecycle of electrical power projects, ensuring successful completion through rigorous management.
-            </p>
-            <p>
-                His proven expertise encompasses initial design and engineering, procurement, material and subcontractor management, and final testing and commissioning. He is adept at managing costs, schedules, and overall project engineering for both Low Voltage (LV) and Medium Voltage (MV) power systems.
-            </p>
-            <div class="info-block">
-                <h3>Education & Languages</h3>
-                <p>Weera holds a **Bachelor of Engineering in Electrical Engineering** from Ubon Ratchathani University. He is fluent in Thai and possesses technical/business proficiency in English.</p>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        Weera Boonkla is a highly experienced and dedicated **Electrical Project Engineer** with over 7 years of specialized expertise in the complete lifecycle management of electrical power projects.
+                    </p>
+                    <p>
+                        My core competency spans from initial design, rigorous procurement, and effective material/subcontractor management, all the way to final testing and commissioning. I ensure project success by expertly managing costs, adhering to tight schedules, and maintaining high engineering standards for both Low Voltage (LV) and Medium Voltage (MV) power systems.
+                    </p>
+                </div>
+                <div class="info-block">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Education & Languages</h3>
+                    <p>**Bachelor of Engineering in Electrical Engineering** from Ubon Ratchathani University.</p>
+                    <p>Fluent in **Thai**. Technical and business proficiency in **English**.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -69,27 +143,30 @@
             <p class="summary-text">Summary of key responsibilities and specialization areas across 7+ years of project execution and electrical design.</p>
             
             <div class="expertise-list">
-                <h3>Current Role: Project Engineer (Schneider Electric, 2018–Present)</h3>
-                <ul>
-                    <li>**Project Execution & Management:** Successfully executes multiple electrical projects, managing all aspects including cost control, schedule adherence, and engineering quality.</li>
-                    <li>**End-to-End Responsibility:** Drives projects from the initiation phase (design/engineering) through to completion, including material delivery, installation, and final testing/commissioning.</li>
-                    <li>**Technical Focus:** Specializes in the application and implementation of Schneider Electric's LV and MV electrical power products.</li>
-                </ul>
-
-                <h3>Previous Roles: Design & Coordination (2012–2018)</h3>
-                <ul>
-                    <li>**Power Plant Projects (RMS Quality):** Managed and coordinated engineering projects, including electrical bulk design and material supply for Power Plant facilities.</li>
-                    <li>**Oil & Gas Design (THAI ROTARY ENGINEERING):** Specialized in electrical power system design within the oil and gas field.</li>
-                </ul>
+                <div class="role-block">
+                    <h3><i class="fa-solid fa-bolt"></i> Current Role: Project Engineer (Schneider Electric, 2018–Present)</h3>
+                    <ul>
+                        <li>**Full Project Lifecycle Management:** Successfully executes multiple electrical projects, ensuring strict cost control, schedule adherence, and engineering quality from start to finish.</li>
+                        <li>**Technical Product Specialization:** Deep expertise in the application and implementation of **Schneider Electric's LV and MV** electrical power products.</li>
+                        <li>**Execution & Commissioning:** Manages material delivery, installation logistics, and final testing/commissioning phases.</li>
+                    </ul>
+                </div>
+                <div class="role-block">
+                    <h3><i class="fa-solid fa-industry"></i> Previous Roles: Design & Coordination (2012–2018)</h3>
+                    <ul>
+                        <li>**Power Plant Projects (RMS Quality):** Coordinated engineering projects, managed electrical bulk design and material supply.</li>
+                        <li>**Oil & Gas Design (THAI ROTARY ENGINEERING):** Specialized in electrical power system design for the oil and gas field, focusing on high-reliability systems.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
     
     <section class="contact-section" id="contact-section">
         <div class="contact-content content-padding">
-            <h2>Get in Touch</h2>
-            <p class="summary-text">I am currently based in Bueng Kum district, Bangkok City, Thailand. Feel free to connect regarding new project opportunities or consulting roles.</p>
-            <div class="contact-info">
+            <h2>Let's Connect</h2>
+            <p class="summary-text">I am currently based in Bueng Kum district, Bangkok City, Thailand. I welcome opportunities for new projects, consulting roles, or collaborative ventures.</p>
+            <div class="contact-info-grid">
                 <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:weera.boonkla@gmail.com">weera.boonkla@gmail.com</a></p>
                 <p><i class="fa-solid fa-phone"></i> Phone: +66-96-169-8799</p>
                 <p><i class="fa-brands fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/weera-boonkla-a5279a118" target="_blank">View Profile</a></p>
@@ -119,11 +196,46 @@
             </form>
         </div>
     </div>
-    <script>
-    const navLinks = document.querySelectorAll('.navbar a');
-    const sections = document.querySelectorAll('section');
+
+<script>
+    // ******************************************************************************
+    // *** URL ของ Google Apps Script ***
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzq5ab1FYhMb0DdBHEy4N8FbcWHWKXn74orVyC57_jEjhfElaZiw3ktmy6JAwsAJkFYmQ/exec"; 
+    // ******************************************************************************
+
+
+    // ------------------------------------
+    // 1. IMAGE SWAPPING LOGIC (6 วินาที + Fade)
+    // ------------------------------------
+    const images = ['my-profile.jpg', 'my-profile2.jpg']; 
+    let currentImageIndex = 0;
+    const profileImg = document.getElementById('profile-img');
+
+    function swapImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        const nextImageSrc = images[currentImageIndex];
+        
+        // Fade Out
+        profileImg.style.opacity = '0'; 
+
+        setTimeout(() => {
+            profileImg.src = nextImageSrc;
+            // Fade In
+            profileImg.style.opacity = '1'; 
+        }, 500); 
+    }
+
+    // Set interval only if profileImg element exists
+    if (profileImg) {
+        setInterval(swapImage, 6000);
+    }
     
-    // --- 1. ScrollSpy and Smooth Scroll for Navigation Links ---
+    // ------------------------------------
+    // 2. SCROLLSPY & SMOOTH SCROLL LOGIC
+    // ------------------------------------
+    const navLinks = document.querySelectorAll('.navbar a');
+    const sections = document.querySelectorAll('section'); 
+
     function updateActiveLink() {
         let current = '';
         sections.forEach(section => {
@@ -142,7 +254,7 @@
     }
     
     window.addEventListener('scroll', updateActiveLink);
-    updateActiveLink();
+    window.addEventListener('load', updateActiveLink); 
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -158,21 +270,103 @@
         });
     });
 
-    // --- 2. Custom Button Actions ---
+    // ------------------------------------
+    // 3. MOBILE MENU TOGGLE LOGIC
+    // ------------------------------------
+    const menuIcon = document.getElementById('menu-icon');
+    const mobileNav = document.getElementById('mobile-nav'); 
 
-    // 2.1 Contact Me Button Scroll
+    if (menuIcon && mobileNav) {
+        menuIcon.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-times');
+            
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+                document.body.style.overflow = 'auto'; 
+            });
+        });
+    }
+    
+    // ------------------------------------
+    // 4. CV COUNT FETCH LOGIC
+    // ------------------------------------
+    function fetchCvRequestCount() {
+        const countElement = document.getElementById('cv-download-count');
+        if (!countElement) return;
+
+        countElement.textContent = '...'; 
+        
+        const countUrl = `${APPS_SCRIPT_URL}?action=count`; 
+
+        fetch(countUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data && data.count !== undefined) {
+                    countElement.textContent = data.count; 
+                } else {
+                    countElement.textContent = '40+'; // Fallback
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching CV count:", error);
+                countElement.textContent = '40+'; // Fallback 
+            });
+    }
+
+    // ------------------------------------
+    // 5. SHARE URL LOGIC
+    // ------------------------------------
+    function setupShareButtons() {
+        const portfolioUrl = encodeURIComponent("https://github.com/weeraboonkla/portfolio"); 
+        const shareText = encodeURIComponent("Check out Weera Boonkla's professional portfolio specializing in Electrical Project Engineering and Schneider Electric systems.");
+
+        const shareData = [
+            { id: 'share-linkedin', url: `https://www.linkedin.com/sharing/share-offsite/?url=${portfolioUrl}` },
+            { id: 'share-facebook', url: `https://www.facebook.com/sharer/sharer.php?u=${portfolioUrl}` },
+            { id: 'share-twitter', url: `https://twitter.com/intent/tweet?url=${portfolioUrl}&text=${shareText}` },
+            { id: 'share-line', url: `https://social-plugins.line.me/lineit/share?url=${portfolioUrl}&text=${shareText}` }
+        ];
+
+        shareData.forEach(({ id, url }) => {
+            const button = document.getElementById(id);
+            if (button) {
+                button.href = url;
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.open(url, 'ShareWindow', 'width=600,height=400,scrollbars=yes');
+                });
+            }
+        });
+    }
+
+
+    // ------------------------------------
+    // 6. CTA & MODAL LOGIC
+    // ------------------------------------
+    
+    // Contact Me Button Scroll
     const contactMeCta = document.getElementById('contact-me-cta');
     contactMeCta.addEventListener('click', function(e) {
         e.preventDefault();
-        // Scroll to Contact Section
         document.querySelector('#contact-section').scrollIntoView({
             behavior: 'smooth'
         });
     });
 
-    // 2.2 Download CV Access Request (Using Custom Modal)
-
-    // Elements
+    // Download CV Access Request (Modal Logic)
     const cvRequestButtons = document.querySelectorAll('#cv-request-nav, #cv-request-hero');
     const modal = document.getElementById('cv-request-modal');
     const closeButton = modal.querySelector('.close-button');
@@ -180,25 +374,22 @@
     const submitBtn = document.getElementById('submit-request-btn');
     const modalMessage = document.getElementById('modal-message');
 
-    // *** สำคัญ: แทนที่ URL นี้ด้วย Web App URL ของคุณจาก Google Apps Script ***
-    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby6RZ-MxzOWgpTyEdo9OzqJlMey7jWbMPKImBTmtgmkfqExSyjb-NZYsrzIcuHpODJevw/exec"; 
-
     // Open Modal
     cvRequestButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            modalMessage.style.display = 'none'; // Reset message area
+            modalMessage.style.display = 'none'; 
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent scrolling background
+            document.body.style.overflow = 'hidden'; 
         });
     });
 
     // Close Modal
     function closeModal() {
         modal.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Restore scrolling
-        form.reset(); // Clear the form
-        submitBtn.classList.remove('loading'); // Ensure button is not in loading state
+        document.body.style.overflow = 'auto'; 
+        form.reset(); 
+        submitBtn.classList.remove('loading'); 
         submitBtn.disabled = false;
     }
 
@@ -213,19 +404,12 @@
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        if (APPS_SCRIPT_URL.includes("YOUR_APPS_SCRIPT_WEB_APP_URL")) {
-            alert("❌ ERROR: Please replace the APPS_SCRIPT_URL in the JavaScript code with your actual URL before use.");
-            return;
-        }
-
-        // --- Basic Validation ---
         const emailInput = document.getElementById('request-email');
         if (!emailInput.value || !emailInput.value.includes('@')) {
             showMessage(modalMessage, 'error', 'Please enter a valid email address.', 3000);
             return;
         }
         
-        // --- Submission Logic ---
         const formData = new FormData(form);
         
         submitBtn.classList.add('loading');
@@ -246,23 +430,22 @@
             let data;
             try {
                 data = JSON.parse(text);
-                // Check for success status from Apps Script JSON
                 if (data.status === 'success') {
                     showMessage(modalMessage, 'success', 
                         "✅ Request Sent! A download link will be emailed to you upon approval from Weera."
                     );
-                    setTimeout(closeModal, 3000); // Close after success
+                    fetchCvRequestCount(); 
+                    setTimeout(closeModal, 3000); 
                 } else {
-                    // Handle logical error from Apps Script (e.g., failed to send email)
                     showMessage(modalMessage, 'error', 
                         `❌ Submission Error: ${data.message || 'Unknown error occurred on the server.'}`
                     );
                 }
             } catch (e) {
-                // Case where Apps Script returns plain text success/error but no JSON
-                 showMessage(modalMessage, 'success', 
-                    "✅ Request Submitted! Please wait for approval. (If an error occurred, Weera will contact you directly.)"
+                showMessage(modalMessage, 'success', 
+                    "✅ Request Submitted! Please wait for approval."
                 );
+                fetchCvRequestCount(); 
                 setTimeout(closeModal, 3000);
             }
         })
@@ -289,7 +472,57 @@
             }, duration);
         }
     }
+
+    // Typewriter: 
+    function typewriter(targetEl, text, options = {}) {
+        const delay = options.speed || 40;
+        const loop = options.loop || false; 
+        const pauseAfter = options.pauseAfter || 1400;
+
+        let i = 0;
+        let deleting = false;
+
+        function step() {
+            if (!deleting) {
+                if (i <= text.length) {
+                    targetEl.textContent = text.slice(0, i);
+                    i++;
+                    setTimeout(step, delay);
+                } else if (loop) {
+                    setTimeout(() => { deleting = true; i = text.length; step(); }, pauseAfter);
+                }
+            } else {
+                if (i >= 0) {
+                    targetEl.textContent = text.slice(0, i);
+                    i--;
+                    setTimeout(step, Math.max(18, delay * 0.6));
+                } else {
+                    deleting = false;
+                    i = 0;
+                    setTimeout(step, 220);
+                }
+            }
+        }
+
+        step();
+        return {
+            stop() { deleting = false; i = text.length + 1; }
+        };
+    }
+    
+    // ข้อความ Typewriter ที่กระชับ
+    const heroText = "Electrical Project Engineer | 7+ Years Experience | LV/MV Schneider Electric Systems | Full Project Lifecycle Management.";
+
+    window.addEventListener('load', function() {
+        fetchCvRequestCount();
+        setupShareButtons();
+        const target = document.getElementById('typewriter-target');
+        if (target) {
+            typewriter(target, heroText, { speed: 28, loop: false });
+        }
+    });
+
 </script>
 
-</body>
+    </div> </body>
 </html>
